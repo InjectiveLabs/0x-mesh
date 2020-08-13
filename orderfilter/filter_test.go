@@ -310,7 +310,7 @@ func testFilterMatchOrderMessageJSON(t *testing.T, generateFilter func(int, stri
 			note:              "happy path",
 			chainID:           constants.TestChainID,
 			customOrderSchema: DefaultCustomOrderSchema,
-			orderMessageJSON:  []byte(`{"messageType":"order","order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x48bacb9266a570d521063ef5dd96e61686dbe788","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainId":1337,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/0x-orders/version/3/chain/1337/schema/e30="]}`),
+			orderMessageJSON:  []byte(`{"messageType":"order","order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x48bacb9266a570d521063ef5dd96e61686dbe788","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainId":1337,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/injective-0x-orders/version/3/chain/1337/schema/e30="]}`),
 			expectedResult:    true,
 		},
 		{
@@ -331,35 +331,35 @@ func testFilterMatchOrderMessageJSON(t *testing.T, generateFilter func(int, stri
 			note:              "missing message type",
 			chainID:           constants.TestChainID,
 			customOrderSchema: DefaultCustomOrderSchema,
-			orderMessageJSON:  []byte(`{"order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x48bacb9266a570d521063ef5dd96e61686dbe788","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainId":1337,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/0x-orders/version/3/chain/1337/schema/e30="]}`),
+			orderMessageJSON:  []byte(`{"order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x48bacb9266a570d521063ef5dd96e61686dbe788","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainId":1337,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/injective-0x-orders/version/3/chain/1337/schema/e30="]}`),
 			expectedResult:    false,
 		},
 		{
 			note:              "wrong message type",
 			chainID:           constants.TestChainID,
 			customOrderSchema: DefaultCustomOrderSchema,
-			orderMessageJSON:  []byte(`{"messageType":"wrong","order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x48bacb9266a570d521063ef5dd96e61686dbe788","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainId":1337,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/0x-orders/version/3/chain/1337/schema/e30="]}`),
+			orderMessageJSON:  []byte(`{"messageType":"wrong","order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x48bacb9266a570d521063ef5dd96e61686dbe788","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainId":1337,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/injective-0x-orders/version/3/chain/1337/schema/e30="]}`),
 			expectedResult:    false,
 		},
 		{
 			note:              "missing order",
 			chainID:           constants.TestChainID,
 			customOrderSchema: DefaultCustomOrderSchema,
-			orderMessageJSON:  []byte(`{"messageType":"order","topics":["/0x-orders/version/3/chain/1337/schema/e30="]}`),
+			orderMessageJSON:  []byte(`{"messageType":"order","topics":["/injective-0x-orders/version/3/chain/1337/schema/e30="]}`),
 			expectedResult:    false,
 		},
 		{
 			note:              "order with wrong exchange address",
 			chainID:           constants.TestChainID,
 			customOrderSchema: DefaultCustomOrderSchema,
-			orderMessageJSON:  []byte(`{"messageType":"order","order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x0000000000000000000000000000000000000000","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainId":1337,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/0x-orders/version/3/chain/1337/schema/e30="]}`),
+			orderMessageJSON:  []byte(`{"messageType":"order","order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x0000000000000000000000000000000000000000","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainId":1337,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/injective-0x-orders/version/3/chain/1337/schema/e30="]}`),
 			expectedResult:    false,
 		},
 		{
 			note:              "order with wrong chain ID",
 			chainID:           constants.TestChainID,
 			customOrderSchema: DefaultCustomOrderSchema,
-			orderMessageJSON:  []byte(`{"messageType":"order","order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x48bacb9266a570d521063ef5dd96e61686dbe788","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainID":42,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/0x-orders/version/3/chain/1337/schema/e30="]}`),
+			orderMessageJSON:  []byte(`{"messageType":"order","order":{"makerAddress":"0x6ecbe1db9ef729cbe972c83fb886247691fb6beb","makerAssetData":"0xf47261b0000000000000000000000000871dd7c2b4b25e1aa18728e9d5f2af4c4e431f5c","makerAssetAmount":"100000000000000000000","makerFee":"0","takerAddress":"0x0000000000000000000000000000000000000000","takerAssetData":"0xf47261b00000000000000000000000000b1ba0af832d7c05fd64161e0db78e85978e8082","takerAssetAmount":"50000000000000000000","takerFee":"0","senderAddress":"0x0000000000000000000000000000000000000000","exchangeAddress":"0x48bacb9266a570d521063ef5dd96e61686dbe788","feeRecipientAddress":"0xa258b39954cef5cb142fd567a46cddb31a670124","expirationTimeSeconds":"1575499721","salt":"1548619145450","makerFeeAssetData":"0x","takerFeeAssetData":"0x","chainID":42,"signature":"0x1b0d147219c5c92262f0902727a8d72b09ea5165ac2ede14bccbfbf6559343d8305978e22516dc1ea75e10af2c8954cd45da562ec907ce5723a62728272c566a3f02"},"topics":["/injective-0x-orders/version/3/chain/1337/schema/e30="]}`),
 			expectedResult:    false,
 		},
 	}
@@ -391,13 +391,13 @@ func testFilterTopic(t *testing.T, generateFilter func(int, string, ethereum.Con
 			chainID:           constants.TestChainID,
 			customOrderSchema: DefaultCustomOrderSchema,
 			orderJSON:         standardValidOrderJSON,
-			expectedTopic:     "/0x-orders/version/3/chain/1337/schema/e30=",
+			expectedTopic:     "/injective-0x-orders/version/3/chain/1337/schema/e30=",
 		},
 		{
 			chainID:           constants.TestChainID,
 			customOrderSchema: `{"properties":{"senderAddress":{"type":"string","pattern":"0x00000000000000000000000000000000ba5eba11"}}}`,
 			orderJSON:         orderWithSpecificSenderAddressJSON,
-			expectedTopic:     "/0x-orders/version/3/chain/1337/schema/eyJwcm9wZXJ0aWVzIjp7InNlbmRlckFkZHJlc3MiOnsicGF0dGVybiI6IjB4MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBiYTVlYmExMSIsInR5cGUiOiJzdHJpbmcifX19",
+			expectedTopic:     "/injective-0x-orders/version/3/chain/1337/schema/eyJwcm9wZXJ0aWVzIjp7InNlbmRlckFkZHJlc3MiOnsicGF0dGVybiI6IjB4MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBiYTVlYmExMSIsInR5cGUiOiJzdHJpbmcifX19",
 		},
 		{
 			// Same as above but the JSON schema has extra whitespace and some
@@ -405,7 +405,7 @@ func testFilterTopic(t *testing.T, generateFilter func(int, string, ethereum.Con
 			chainID:           constants.TestChainID,
 			customOrderSchema: `{"properties": {"senderAddress": {"pattern": "0x00000000000000000000000000000000ba5eba11", "type": "string"}}}`,
 			orderJSON:         orderWithSpecificSenderAddressJSON,
-			expectedTopic:     "/0x-orders/version/3/chain/1337/schema/eyJwcm9wZXJ0aWVzIjp7InNlbmRlckFkZHJlc3MiOnsicGF0dGVybiI6IjB4MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBiYTVlYmExMSIsInR5cGUiOiJzdHJpbmcifX19",
+			expectedTopic:     "/injective-0x-orders/version/3/chain/1337/schema/eyJwcm9wZXJ0aWVzIjp7InNlbmRlckFkZHJlc3MiOnsicGF0dGVybiI6IjB4MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDBiYTVlYmExMSIsInR5cGUiOiJzdHJpbmcifX19",
 		},
 	}
 
@@ -430,6 +430,6 @@ func TestDefaultOrderSchemaTopic(t *testing.T) {
 	chainID := 1337
 	defaultTopic, err := GetDefaultTopic(chainID, contractAddresses)
 	require.NoError(t, err)
-	expectedTopic := "/0x-orders/version/3/chain/1337/schema/e30="
+	expectedTopic := "/injective-0x-orders/version/3/chain/1337/schema/e30="
 	assert.Equal(t, expectedTopic, defaultTopic, "the topic for the default filter should not change")
 }

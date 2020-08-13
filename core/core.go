@@ -465,7 +465,7 @@ func getPublishTopics(chainID int, contractAddresses ethereum.ContractAddresses,
 }
 
 func (app *App) getRendezvousPoints() ([]string, error) {
-	defaultRendezvousPoint := fmt.Sprintf("/0x-mesh/network/%d/version/2", app.config.EthereumChainID)
+	defaultRendezvousPoint := fmt.Sprintf("/injective-0x-mesh/network/%d/version/2", app.config.EthereumChainID)
 	defaultTopic, err := orderfilter.GetDefaultTopic(app.chainID, *app.contractAddresses)
 	if err != nil {
 		return nil, err

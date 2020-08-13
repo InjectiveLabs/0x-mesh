@@ -112,16 +112,28 @@ all: mesh mesh-keygen mesh-bootstrap db-integrity-check
 
 # Docker images
 
+GIT_COMMIT = $(shell git rev-parse --short HEAD)
+IMAGE_PREFIX := gcr.io/injective-core
 
 .PHONY: docker-mesh
 docker-mesh:
-	docker build . -t 0xorg/mesh -f ./dockerfiles/mesh/Dockerfile
+	docker build . --build-arg GIT_COMMIT=$(GIT_COMMIT) -t $(IMAGE_PREFIX)/0x-mesh:local -f ./dockerfiles/mesh/Dockerfile
+	docker tag $(IMAGE_PREFIX)/0x-mesh:local $(IMAGE_PREFIX)/0x-mesh:$(GIT_COMMIT)
+	docker tag $(IMAGE_PREFIX)/0x-mesh:local $(IMAGE_PREFIX)/0x-mesh:latest
 
+docker-mesh-push:
+	docker push $(IMAGE_PREFIX)/0x-mesh:$(GIT_COMMIT)
+	docker push $(IMAGE_PREFIX)/0x-mesh:latest
 
 .PHONY: docker-mesh-bootstrap
 docker-mesh-bootstrap:
-	docker build . -t 0xorg/mesh-bootstrap -f ./dockerfiles/mesh-bootstrap/Dockerfile
+	docker build . --build-arg GIT_COMMIT=$(GIT_COMMIT) -t $(IMAGE_PREFIX)/0x-mesh-bootstrap:local -f ./dockerfiles/mesh-bootstrap/Dockerfile
+	docker tag $(IMAGE_PREFIX)/0x-mesh-bootstrap:local $(IMAGE_PREFIX)/0x-mesh-bootstrap:$(GIT_COMMIT)
+	docker tag $(IMAGE_PREFIX)/0x-mesh-bootstrap:local $(IMAGE_PREFIX)/0x-mesh-bootstrap:latest
 
+docker-mesh-bootstrap-push:
+	docker push $(IMAGE_PREFIX)/0x-mesh-bootstrap:$(GIT_COMMIT)
+	docker push $(IMAGE_PREFIX)/0x-mesh-bootstrap:latest
 
 .PHONY: docker-mesh-fluent-bit
 docker-mesh-fluent-bit:

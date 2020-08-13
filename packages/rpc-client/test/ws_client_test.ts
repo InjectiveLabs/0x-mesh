@@ -145,8 +145,8 @@ blockchainTests.resets('WSClient', env => {
                 )}-${leftPad(now.getUTCDate())}T00:00:00Z`;
                 const expectedStats = {
                     version: '',
-                    pubSubTopic: '/0x-orders/version/3/chain/1337/schema/e30=',
-                    rendezvous: '/0x-mesh/network/1337/version/2',
+                    pubSubTopic: '/injective-0x-orders/version/3/chain/1337/schema/e30=',
+                    rendezvous: '/injective-0x-mesh/network/1337/version/2',
                     secondaryRendezvous: [],
                     peerID: deployment.peerID,
                     ethereumChainID: 1337,

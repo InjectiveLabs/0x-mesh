@@ -700,11 +700,11 @@ function testStats(stats: WrapperStats[]): void {
     const printer = prettyPrintTestCase('stats', 'RealisticStats');
     printer('version', stats[0].version === 'development');
     printer('pubSubTopic', stats[0].pubSubTopic === 'someTopic');
-    printer('rendezvous', stats[0].rendezvous === '/0x-mesh/network/1337/version/2');
+    printer('rendezvous', stats[0].rendezvous === '/injective-0x-mesh/network/1337/version/2');
     printer(
         'secondaryRendezvous',
         stats[0].secondaryRendezvous.length === 1 &&
-            stats[0].secondaryRendezvous[0] === '/0x-custom-filter-rendezvous/version/2/chain/1337/schema/someTopic',
+            stats[0].secondaryRendezvous[0] === '/injective-0x-custom-filter-rendezvous/version/2/chain/1337/schema/someTopic',
     );
     printer('peerID', stats[0].peerID === '16Uiu2HAmGd949LwaV4KNvK2WDSiMVy7xEmW983VH75CMmefmMpP7');
     printer('ethereumChainID', stats[0].ethereumChainID === 1337);

@@ -12,7 +12,7 @@ import (
 
 const (
 	// pubsubProtocolTag is the tag used for peers who speak our pubsub protocol.
-	pubsubProtocolTag = "pubsub-protocol"
+	pubsubProtocolTag = "injective-pubsub-protocol"
 	// pubsubProtocolScore is the score to add to peers who speak our pubsub
 	// protocol.
 	pubsubProtocolScore = 10

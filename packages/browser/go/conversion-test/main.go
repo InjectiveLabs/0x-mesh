@@ -488,7 +488,7 @@ func setGlobals() {
 				types.Stats{
 					Version:             "development",
 					PubSubTopic:         "someTopic",
-					Rendezvous:          "/0x-mesh/network/1337/version/2",
+					Rendezvous:          "/injective-0x-mesh/network/1337/version/2",
 					SecondaryRendezvous: []string{"/0x-custom-filter-rendezvous/version/2/chain/1337/schema/someTopic"},
 					PeerID:              "16Uiu2HAmGd949LwaV4KNvK2WDSiMVy7xEmW983VH75CMmefmMpP7",
 					EthereumChainID:     1337,

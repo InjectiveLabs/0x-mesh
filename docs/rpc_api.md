@@ -203,8 +203,8 @@ Gets certain configurations and stats about a Mesh node.
     "jsonrpc": "2.0",
     "result": {
         "version": "development",
-        "pubSubTopic": "/0x-orders/network/1/version/1",
-        "rendezvous": "/0x-mesh/network/1/version/1",
+        "pubSubTopic": "/injective-0x-orders/network/1/version/1",
+        "rendezvous": "/injective-0x-mesh/network/1/version/1",
         "peerID": "16Uiu2HAmGx8Z6gdq5T5AQE54GMtqDhDFhizywTy1o28NJbAMMumF",
         "ethereumChainID": 1,
         "latestBlock": {

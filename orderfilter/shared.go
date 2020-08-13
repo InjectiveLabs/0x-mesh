@@ -17,11 +17,11 @@ import (
 
 const (
 	pubsubTopicVersion          = 3
-	topicVersionFormat          = "/0x-orders/version/%d%s"
+	topicVersionFormat          = "/injective-0x-orders/version/%d%s"
 	topicChainIDAndSchemaFormat = "/chain/%d/schema/%s"
-	fullTopicFormat             = "/0x-orders/version/%d/chain/%d/schema/%s"
+	fullTopicFormat             = "/injective-0x-orders/version/%d/chain/%d/schema/%s"
 	rendezvousVersion           = 1
-	fullRendezvousFormat        = "/0x-custom-filter-rendezvous/version/%d/chain/%d/schema/%s"
+	fullRendezvousFormat        = "/injective-0x-custom-filter-rendezvous/version/%d/chain/%d/schema/%s"
 )
 
 type WrongTopicVersionError struct {

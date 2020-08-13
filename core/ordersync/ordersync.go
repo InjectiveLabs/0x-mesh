@@ -68,7 +68,7 @@ func (e NoMatchingSubprotocolsError) Error() string {
 
 const (
 	// ID is the ID for the ordersync protocol.
-	ID = protocol.ID("/0x-mesh/order-sync/version/0")
+	ID = protocol.ID("/injective-0x-mesh/order-sync/version/0")
 )
 
 // Request represents a high-level ordersync request. It abstracts away some
