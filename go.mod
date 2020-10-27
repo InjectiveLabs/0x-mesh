@@ -16,7 +16,7 @@ require (
 	github.com/albrow/stringset v2.1.0+incompatible
 	github.com/allegro/bigcache v0.0.0-20190618191010-69ea0af04088 // indirect
 	github.com/aristanetworks/goarista v0.0.0-20190712234253-ed1100a1c015 // indirect
-	github.com/benbjohnson/clock v0.0.0-20161215174838-7dc76406b6d3
+	github.com/benbjohnson/clock v1.0.2
 	github.com/cespare/cp v1.1.1 // indirect
 	github.com/chromedp/cdproto v0.0.0-20190827000638-b5ac1e37ce90
 	github.com/chromedp/chromedp v0.4.0
@@ -43,8 +43,8 @@ require (
 	github.com/libp2p/go-libp2p v0.5.1
 	github.com/libp2p/go-libp2p-autonat-svc v0.1.0
 	github.com/libp2p/go-libp2p-circuit v0.1.4
-	github.com/libp2p/go-libp2p-connmgr v0.2.1
-	github.com/libp2p/go-libp2p-core v0.3.0
+	github.com/libp2p/go-libp2p-connmgr v0.2.4
+	github.com/libp2p/go-libp2p-core v0.5.7
 	github.com/libp2p/go-libp2p-discovery v0.2.0
 	github.com/libp2p/go-libp2p-kad-dht v0.5.0
 	github.com/libp2p/go-libp2p-peer v0.2.0
@@ -57,7 +57,7 @@ require (
 	github.com/libp2p/go-ws-transport v0.2.0
 	github.com/mattn/go-colorable v0.1.2 // indirect
 	github.com/mattn/go-runewidth v0.0.4 // indirect
-	github.com/multiformats/go-multiaddr v0.2.0
+	github.com/multiformats/go-multiaddr v0.2.2
 	github.com/multiformats/go-multiaddr-dns v0.2.0
 	github.com/ocdogan/rbt v0.0.0-20160425054511-de6e2b48be33
 	github.com/olekukonko/tablewriter v0.0.1 // indirect
