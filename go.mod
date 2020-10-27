@@ -71,7 +71,7 @@ require (
 	github.com/status-im/keycard-go v0.0.0-20190424133014-d95853db0f48 // indirect
 	github.com/steakknife/bloomfilter v0.0.0-20180906043351-99ee86d9200f // indirect
 	github.com/steakknife/hamming v0.0.0-20180906055317-003c143a81c2 // indirect
-	github.com/stretchr/testify v1.4.0
+	github.com/stretchr/testify v1.6.1
 	github.com/syndtr/goleveldb v1.0.0
 	github.com/tyler-smith/go-bip39 v1.0.2 // indirect
 	github.com/wsddn/go-ecdh v0.0.0-20161211032359-48726bab9208 // indirect
