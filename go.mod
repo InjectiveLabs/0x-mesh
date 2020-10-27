@@ -38,7 +38,7 @@ require (
 	github.com/karlseguin/ccache v2.0.3+incompatible
 	github.com/karlseguin/expect v1.0.1 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
-	github.com/lib/pq v1.2.0
+	github.com/lib/pq v1.8.0
 	github.com/libp2p/go-conn-security v0.1.0
 	github.com/libp2p/go-libp2p v0.5.1
 	github.com/libp2p/go-libp2p-autonat-svc v0.1.0
