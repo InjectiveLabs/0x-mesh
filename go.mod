@@ -31,8 +31,8 @@ require (
 	github.com/golang/protobuf v1.3.2 // indirect
 	github.com/google/uuid v1.1.1
 	github.com/hashicorp/golang-lru v0.5.4
-	github.com/ipfs/go-datastore v0.3.1
-	github.com/ipfs/go-ds-leveldb v0.4.0
+	github.com/ipfs/go-datastore v0.4.1
+	github.com/ipfs/go-ds-leveldb v0.4.2
 	github.com/jpillora/backoff v0.0.0-20170918002102-8eab2debe79d
 	github.com/karalabe/usb v0.0.0-20191104083709-911d15fe12a9 // indirect
 	github.com/karlseguin/ccache v2.0.3+incompatible
