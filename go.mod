@@ -54,7 +54,7 @@ require (
 	github.com/libp2p/go-libp2p-swarm v0.2.2
 	github.com/libp2p/go-maddr-filter v0.0.5
 	github.com/libp2p/go-tcp-transport v0.1.1
-	github.com/libp2p/go-ws-transport v0.2.0
+	github.com/libp2p/go-ws-transport v0.3.1
 	github.com/mattn/go-colorable v0.1.2 // indirect
 	github.com/mattn/go-runewidth v0.0.4 // indirect
 	github.com/multiformats/go-multiaddr v0.2.0
